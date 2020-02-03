@@ -1,0 +1,50 @@
+header.masthead {
+  padding-top: calc(6rem + 72px);
+  padding-bottom: 7rem;
+  background: url(../img/head-bg.jpg);
+  background-size: 100%;
+  position: relative;
+  img{
+    border-radius: 50%;
+    border: 9px solid #fff;
+  }
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(116, 123, 208, 0.3);
+  }
+  .container{
+    position: relative;
+    z-index: 1;
+  }
+  hr.star-light:after{
+    background: none;
+    content: '';
+  }
+  h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+    @include body-font;
+  }
+}
+@media (min-width: 992px) {
+  header.masthead {
+    padding-top: calc(6rem + 75px);
+    padding-bottom: 7rem;
+    h1 {
+      font-size: 4.75em;
+      line-height: 4rem;
+    }
+    h2 {
+      font-size: 1.75em;
+    }
+
+  }
+}

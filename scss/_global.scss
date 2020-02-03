@@ -1,0 +1,548 @@
+// Typography
+body {
+  @include body-font;
+  &.loader-inside{
+    overflow: hidden;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include heading-font;
+}
+
+// Custom Horizontal Rule with Star Icon
+hr.star-light,
+hr.star-dark {
+  max-width: 15rem;
+  padding: 0;
+  text-align: center;
+  border: none;
+  border-top: solid 0.25rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+hr.star-light:after,
+hr.star-dark:after {
+  position: relative;
+  top: -.8em;
+  display: inline-block;
+  padding: 0 0.25em;
+  content: '\f13c';
+  font-family: FontAwesome;
+  font-size: 2em;
+}
+
+hr.star-light {
+  border-color: $white;
+}
+hr.star-light:after {
+  color: $white;
+  background-color: $primary;
+}
+
+hr.star-dark {
+  border-color: $secondary;
+}
+hr.star-dark:after {
+  color: $secondary;
+  background-color: white;
+}
+
+// Section Padding Settings
+section {
+  padding: 6rem 0;
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2rem;
+  }
+  @media (min-width: 992px) {
+    h2 {
+      font-size: 3rem;
+      line-height: 2.5rem;
+    }
+  }
+}
+
+// Custom Button Size
+.btn-xl {
+  padding: 1rem 1.75rem;
+  font-size: 1.25rem;
+}
+
+// Custom Rounded Social Button
+.btn-social {
+  width: 3.25rem;
+  height: 3.25rem;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+// Scroll to Top Button
+.scroll-to-top {
+  z-index: 1042;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
+  a {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: fade-out($gray-900, 0.5);
+    line-height: 3.1rem;
+  }
+}
+
+.about-section{
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px){
+  .skill-tree{
+    // margin-top: 120px;
+    // margin-bottom: 100px;
+    width: 938px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    min-height: 45vh;
+    .chart-legend{
+      float: right;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      list-style: none;
+      li{
+        position: absolute;
+        left: 0;
+        float: none;
+        background: 0;
+        border-bottom: 1px solid #aaa;
+        width: 100%;
+        height: 54px;
+        .legend-label{
+          position: static;
+          float: right;
+          top: auto;
+          left: auto;
+          display: block;
+          font-size: .95em;
+          line-height: 1.1;
+          -webkit-transform: rotate(0deg);
+          -webkit-transform-origin: 0 0;
+          -moz-transform: rotate(0deg);
+          -moz-transform-origin: 0 0;
+          -ms-transform: rotate(0deg);
+          -ms-transform-origin: 0 0;
+          -o-transform: rotate(0deg);
+          -o-transform-origin: 0 0;
+          transform: rotate(0deg);
+          transform-origin: 0 0;
+          width: 19%;
+          padding-top: 4px;
+          height: 33px;
+          border-right: 5px solid #000;
+          margin-top: 12px;
+          text-align: left;
+        }
+        &#label01{
+          top: 220px;
+          .legend-label{
+            border-right-color: #f44b00;
+          }
+        }
+        &#label02{
+          top: 165px;
+          .legend-label{
+            border-right-color: #f4b800;
+          }
+        }
+        &#label03{
+          top: 110px;
+          .legend-label{
+            border-right-color: #beca7d;
+          }
+        }
+        &#label04{
+          top: 55px;
+          .legend-label{
+            border-right-color: #8ebd7b;
+          }
+        }
+        &#label05{
+          top: 0px;
+          .legend-label{
+            background: url(../img/queen-crown.png) no-repeat 140px 7px;
+            padding: 4px 0 0 0;
+            -webkit-background-size: 25px;
+            -moz-background-size: 25px;
+            -o-background-size: 25px;
+            background-size: 25px;
+          }
+        }
+      }
+    }
+    .chart-data{
+      float: left;
+      padding-top: 0;
+      margin: 0;
+      background: url(../img/skills-chart-vbar-grid.svg) no-repeat 100% 100%;
+      width: 80%;
+      li{
+        float: left;
+        background: url(../img/skills-chart-vbar-grid.svg) no-repeat 0 100%;
+        border-left: 0 none;
+        border-bottom: 1px solid #000;
+        height: 220px;
+        position: relative;
+        width: 11.1111%;
+        margin-top: 54px;
+        list-style: none;
+        .data-bar{
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 100%;
+          &:before{
+            content: '';
+            display: block;
+            background: #18bc9c;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 75%;
+            height: 85%;
+            transition: all .4s ease;
+            transform: translate(-50%, 0);
+          }
+          .data-label{
+            position: absolute;
+            bottom: -25px;
+            left: 52%;
+            line-height: 1;
+            font-size: 1em;
+            margin-left: 0;
+            -webkit-transform: rotate(45deg);
+            -webkit-transform-origin: 0 0;
+            -moz-transform: rotate(45deg);
+            -moz-transform-origin: 0 0;
+            -ms-transform: rotate(45deg);
+            -ms-transform-origin: 0 0;
+            -o-transform: rotate(45deg);
+            -o-transform-origin: 0 0;
+            transform: rotate(45deg);
+            transform-origin: 0 0;
+            width: 300px;
+          }
+        }
+        &.bar01{
+          .data-bar{
+            &:before{
+
+            }
+          }
+        }
+        &.bar02{
+          .data-bar{
+            &:before{
+              height: 100%;
+            }
+          }
+        }
+        &.bar03{
+          .data-bar{
+            &:before{
+              height: 65%;
+            }
+          }
+        }
+        &.bar04{
+          .data-bar{
+            &:before{
+              height: 80%;
+            }
+          }
+        }
+        &.bar05{
+          .data-bar{
+            &:before{
+              height: 75%;
+            }
+          }
+        }
+        &.bar06{
+          .data-bar{
+            &:before{
+              height: 65%;
+            }
+          }
+        }
+        &.bar07{
+          .data-bar{
+            &:before{
+              height: 45%;
+            }
+          }
+        }
+        &.bar08{
+          .data-bar{
+            &:before{
+              height: 35%;
+            }
+          }
+        }
+        &.bar09{
+          .data-bar{
+            &:before{
+              height: 65%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.experience-section{
+  max-width: 800px;
+  margin: 5em auto 0em;
+  color: $secondary;
+  position: relative;
+  &:before{
+    content: '';
+    width: 2px;
+    height: 100%;
+    background: #2c3e50;
+    display: block;
+    position: absolute;
+    left: 10.5em;
+  }
+  .experience-list{
+    margin-bottom: 30px;
+  }
+}
+
+
+.loader{
+  position: fixed;
+  background: $white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  transition: all .4s ease;
+  opacity: 1;
+  visibility: visible;
+  overflow: hidden;
+  height: 100%;
+  &.hide{ 
+    // opacity: 0;
+    visibility: hidden; 
+    height: 0;
+  }
+  .box{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    span{
+      width: 115px;
+      display: block;
+      margin-top: 14px;
+      margin-left: -25px;
+      font-weight: 600;
+      font-family: Montserrat;
+    }
+    .box-box2{
+      border: 3px solid $primary;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: $primary;
+      animation-name: rotate;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+    h3{
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $white;
+      font-size: 40px;
+    }
+  }
+}
+
+@keyframes rotate {
+    from   { transform: rotate(00deg); }
+    to  { transform: rotate(90deg); }
+}
+
+@media screen and (max-width: 1024px){
+  .skill-tree{
+    margin-top: 10em;
+    .chart-legend{
+      position: absolute;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      left: 0;
+      li{
+        position: relative;
+        float: left;
+        width: 18%;
+        height: 263vh;
+        background: url(../img/skills-chart-legend-vline.svg) no-repeat 100% 0;
+        .legend-label{
+          position: absolute;
+          top: -30px;
+          right: -10px;
+          display: block;
+          font-size: .8em;
+          line-height: 1;
+          -webkit-transform: rotate(50deg);
+          -webkit-transform-origin: 100% 0;
+          -moz-transform: rotate(50deg);
+          -moz-transform-origin: 100% 0;
+          -ms-transform: rotate(50deg);
+          -ms-transform-origin: 100% 0;
+          -o-transform: rotate(50deg);
+          -o-transform-origin: 100% 0;
+          transform: rotate(50deg);
+          transform-origin: 100% 0;
+          width: 200px;
+          text-align: right;
+        }
+      }
+    }
+    .chart-data{
+      padding-top: 30px;
+      margin: 0;
+      background: url(../img/skills-chart-hbar-grid.svg) no-repeat 0 100%;
+      list-style: none;
+      padding-left: 0;
+      li{
+        background: url(../img/skills-chart-hbar-grid.svg) no-repeat 0 0;
+        border-left: 1px solid #000;
+        .data-bar{
+          background: url(../img/skills-chart-hbar.svg) no-repeat 100% 50%;
+          height: 187px;
+          position: relative;
+          &:before{
+            content: '';
+            display: block;
+            background: #18bc9c;
+            position: absolute;
+            bottom: 40px;
+            width: 85%;
+            height: 50%;
+            transition: all .4s ease;
+          }
+        }
+        &.bar01{
+          .data-bar{
+            &:before{
+              width: 85%;
+            }
+          }
+        }
+        &.bar02{
+          .data-bar{
+            &:before{
+              width: 93%;
+            }
+          }
+        }
+        &.bar03{
+          .data-bar{
+            &:before{
+              width: 65%;
+            }
+          }
+        }
+        &.bar04{
+          .data-bar{
+            &:before{
+              width: 80%;
+            }
+          }
+        }
+        &.bar05{
+          .data-bar{
+            &:before{
+              width: 73.555%;
+            }
+          }
+        }
+        &.bar06{
+          .data-bar{
+            &:before{
+              width: 65%;
+            }
+          }
+        }
+        &.bar07{
+          .data-bar{
+            &:before{
+              width: 30%;
+            }
+          }
+        }
+        &.bar08{
+          .data-bar{
+            &:before{
+              width: 23%;
+            }
+          }
+        }
+        &.bar09{
+          .data-bar{
+            &:before{
+              width: 49%;
+            }
+          }
+        }
+        .data-label{
+          line-height: 60px;
+          font-size: .938em;
+          margin-left: 15px;  
+        }
+      }
+    }
+  }
+  .experience-section{
+    &:before{
+      display: none;
+    }
+    .experience-list{
+      .exp-date{
+        margin-bottom: 15px;
+        span{
+          border-bottom: 2px solid #2c3e50;
+          padding-bottom: 5px;
+        }
+      }
+    }
+  }
+  #mainNav{
+    .navbar-brand{
+      width: 70%;
+    }
+    img{
+      width: 100%;
+    }
+  }
+}
